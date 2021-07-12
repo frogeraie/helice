@@ -8,14 +8,9 @@ let server;
 const port = process.env.PORT || 7777;
   const http = require('http');
   server = http.createServer(app);
- 
-const io = require('socket.io')(server);
-io.sockets.on('error', e => console.log(e));
 app.use(express.static(__dirname + '/public'));
 
 server.listen(port, () => console.log(`Server is running on port ${port}`));
-
-var socketServer = io.listen(server, {"log level":1});
 
 // respond to web GET requests with the index.html page:
 app.get('/', function (request, response) {
@@ -46,7 +41,7 @@ fs.writeFileSync('nom.txt', username + '\n', {'flag':'w'}, function (err) {
 const text = fs.readFileSync('nom.txt', 'utf8');
 
 var gtts = new gTTS(text, 'fr');
-gtts.save('/tmp/nom3.mp3', function (err, result) {
+gtts.save('nom.mp3', function (err, result) {
   if(err) { throw new Error(err) }
   console.log('Success! Open file /nom.mp3 to hear result.');
 });
