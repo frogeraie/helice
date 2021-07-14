@@ -13,7 +13,7 @@ function centerCanvas() {
 }
 
 function preload() {
-  font = loadFont('/data/metropolis.regular.otf');
+  font = loadFont('metropolis.regular.otf');
 }
 
 function setup() {
