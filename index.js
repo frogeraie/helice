@@ -46,7 +46,7 @@ gtts.save('nom.mp3', function (err, result) {
   console.log('Success! Open file /nom.mp3 to hear result.');
 });
 });
-  app.get('/public/video1', function (req, res) {
+  app.get('/video1', function (req, res) {
   res.sendFile(__dirname + '/public/video1.html')
 })
   app.post('/register1',function(req,res){
@@ -68,7 +68,7 @@ gtts.save('reponse1.mp3', function (err, result) {
   console.log('Success! Open file /reponse1.mp3 to hear result.');
 });
 });
-   app.get('/public/video2', function (req, res) {
+   app.get('/video2', function (req, res) {
   res.sendFile(__dirname + '/public/video2.html')
 })
   app.post('/register2',function(req,res){
@@ -90,7 +90,7 @@ gtts.save('reponse2.mp3', function (err, result) {
   console.log('Success! Open file /reponse2.mp3 to hear result.');
 });
 });
-   app.get('/public/video3', function (req, res) {
+   app.get('/video3', function (req, res) {
   res.sendFile(__dirname + '/public/video3.html',{acceptRanges: false})
 })
   app.post('/register3',function(req,res){
@@ -113,7 +113,7 @@ gtts.save('reponse3.mp3', function (err, result) {
 });
 });
 
-   app.get('/public/video4', function (req, res) {
+   app.get('/video4', function (req, res) {
   res.sendFile(__dirname + '/public/video4.html')
 })
   app.post('/register4',function(req,res){
@@ -135,7 +135,7 @@ gtts.save('reponse4.mp3', function (err, result) {
 });
 });
 
-   app.get('/public/video5', function (req, res) {
+   app.get('/video5', function (req, res) {
   res.sendFile(__dirname + '/public/video5.html')
 })
   app.post('/register5',function(req,res){
@@ -157,7 +157,7 @@ gtts.save('reponse5.mp3', function (err, result) {
 });
 });
 
-   app.get('/public/video6', function (req, res) {
+   app.get('/video6', function (req, res) {
   res.sendFile(__dirname + '/public/video6.html')
 })
   app.post('/register6',function(req,res){
@@ -178,7 +178,7 @@ gtts.save('reponse6.mp3', function (err, result) {
   console.log('Success! Open file /reponse6.mp3 to hear result.');
 });
 });
-  app.get('/public/videoftts', function (req, res) {
+  app.get('/videoftts', function (req, res) {
   res.sendFile(__dirname + '/public/videoftts.html')
 })
   app.post('/registerf',function(req,res){
