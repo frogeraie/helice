@@ -30,7 +30,7 @@ app.get('/video0', function (req, res) {
 app.post('/register', function (req, res) {
    var username = req.body.username;
    var html = 'Hello:' + username;
-   res.redirect('/video0.html');
+   res.redirect('video0');
    console.log(req.body);
 
 fs.writeFileSync('nom.txt', username + '\n', {'flag':'w'}, function (err) {
@@ -44,6 +44,10 @@ var gtts = new gTTS(text, 'fr');
 gtts.save('nom.mp3', function (err, result) {
   if(err) { throw new Error(err) }
   console.log('Success! Open file /nom.mp3 to hear result.');
+});
+fs.rename('nom.mp3', 'public/nom.mp3', (err) => {
+  if (err) throw err;
+  console.log('Rename complete!');
 });
 });
   app.get('/video1', function (req, res) {
@@ -67,6 +71,10 @@ gtts.save('reponse1.mp3', function (err, result) {
   if(err) { throw new Error(err) }
   console.log('Success! Open file /reponse1.mp3 to hear result.');
 });
+fs.rename('reponse1.mp3', 'public/reponse1.mp3', (err) => {
+  if (err) throw err;
+  console.log('Rename complete!');
+});
 });
    app.get('/video2', function (req, res) {
   res.sendFile(__dirname + '/public/video2.html')
@@ -88,6 +96,10 @@ var gtts = new gTTS(text, 'fr');
 gtts.save('reponse2.mp3', function (err, result) {
   if(err) { throw new Error(err) }
   console.log('Success! Open file /reponse2.mp3 to hear result.');
+});
+fs.rename('reponse2.mp3', 'public/reponse2.mp3', (err) => {
+  if (err) throw err;
+  console.log('Rename complete!');
 });
 });
    app.get('/video3', function (req, res) {
@@ -111,6 +123,10 @@ gtts.save('reponse3.mp3', function (err, result) {
   if(err) { throw new Error(err) }
   console.log('Success! Open file /reponse3.mp3 to hear result.');
 });
+fs.rename('reponse3.mp3', 'public/reponse3.mp3', (err) => {
+  if (err) throw err;
+  console.log('Rename complete!');
+});
 });
 
    app.get('/video4', function (req, res) {
@@ -132,6 +148,10 @@ var gtts = new gTTS(text, 'fr');
 gtts.save('reponse4.mp3', function (err, result) {
   if(err) { throw new Error(err) }
   console.log('Success! Open file /reponse4.mp3 to hear result.');
+});
+fs.rename('reponse4.mp3', 'public/reponse4.mp3', (err) => {
+  if (err) throw err;
+  console.log('Rename complete!');
 });
 });
 
@@ -155,6 +175,10 @@ gtts.save('reponse5.mp3', function (err, result) {
   if(err) { throw new Error(err) }
   console.log('Success! Open file /reponse5.mp3 to hear result.');
 });
+fs.rename('reponse5.mp3', 'public/reponse5.mp3', (err) => {
+  if (err) throw err;
+  console.log('Rename complete!');
+});
 });
 
    app.get('/video6', function (req, res) {
@@ -177,6 +201,10 @@ gtts.save('reponse6.mp3', function (err, result) {
   if(err) { throw new Error(err) }
   console.log('Success! Open file /reponse6.mp3 to hear result.');
 });
+fs.rename('reponse6.mp3', 'public/reponse6.mp3', (err) => {
+  if (err) throw err;
+  console.log('Rename complete!');
+});
 });
   app.get('/videoftts', function (req, res) {
   res.sendFile(__dirname + '/public/videoftts.html')
@@ -196,6 +224,14 @@ fs.writeFileSync('futur.txt', futur + '\n', {'flag':'w'}, function (err) {
 var gtts = new gTTS(text, 'fr');
 gtts.save('futur.mp3', function (err, result) {
   if(err) { throw new Error(err) }
-  console.log('Success! Open file /reponse3.mp3 to hear result.');
+  console.log('Success! Open file /futur.mp3 to hear result.');
+});
+fs.rename('futur.mp3', 'public/futur.mp3', (err) => {
+  if (err) throw err;
+  console.log('Rename complete!');
+});
+fs.rename('futur.txt', 'public/futur.txt', (err) => {
+  if (err) throw err;
+  console.log('Rename complete!');
 });
 });

@@ -4,7 +4,7 @@ var px, py;
 
 function preload() {
  
-  rawtext = loadStrings("data/futur.txt");
+  rawtext = loadStrings("futur.txt");
 }
 
 function setup() {
