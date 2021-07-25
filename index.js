@@ -30,15 +30,16 @@ app.get('/video0', function (req, res) {
 app.post('/register', function (req, res) {
    var username = req.body.username;
    var html = 'Hello:' + username;
-   res.redirect('video0');
-   console.log(req.body);
 
-fs.writeFileSync('nom.txt', username + '\n', {'flag':'w'}, function (err) {
+fs.writeFileSync('public/data/nom.txt', username + '\n', {'flag':'w'}, function (err) {
   if (err) return console.log(err);
   console.log('Hello World > helloworld.txt');
 });
-  
-const text = fs.readFileSync('nom.txt', 'utf8');
+ const accueil = fs.readFileSync('public/data/accueil.txt', 'utf8');
+ // append data to file
+fs.appendFileSync('public/data/nom.txt',accueil, 'utf8');
+        console.log("nom is appended to file successfully.") 
+const text = fs.readFileSync('public/data/nom.txt', 'utf8');
 
 var gtts = new gTTS(text, 'fr');
 gtts.save('nom.mp3', function (err, result) {
@@ -48,6 +49,8 @@ gtts.save('nom.mp3', function (err, result) {
 fs.rename('nom.mp3', 'public/nom.mp3', (err) => {
   if (err) throw err;
   console.log('Rename complete!');
+  res.redirect('video0');
+   console.log(req.body);
 });
 });
   app.get('/video1', function (req, res) {
